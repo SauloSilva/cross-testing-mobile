@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yard'
 require 'cucumber/platform'
 require 'cucumber/core/gherkin/parser'

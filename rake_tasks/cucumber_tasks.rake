@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 require 'cucumber'
 require 'cucumber/rake/task'
-
 
 ###
 # Tasks
 ###
 
-desc 'Executar os testes de aceitação com a plataforma selecionada (ios|android) Ex.: run_acceptance[android,@homepage]'
+desc 'Executar os testes para a plat. selecionada (ios|android) Ex.: run_acceptance[android,@homepage]'
 task :run_acceptance, :platform, :tags do |_, args|
   platform_check(args)
 
@@ -40,11 +41,11 @@ def run_rake_task(name, platform, tags)
 end
 
 def set_reporting(platform, rerun)
-  #reporting = "--format AllureCucumber::Formatter --out allure-results/#{platform}/"
+  # reporting = "--format AllureCucumber::Formatter --out allure-results/#{platform}/"
 end
 
 def platform_check(args)
-  raise 'Por favor defina a plataforma (android|ios)' if args.nil? or args[:platform].nil?
+  raise 'Por favor: (android|ios)' if args.nil? || args[:platform].nil?
 
   case args[:platform].downcase
   when 'android'

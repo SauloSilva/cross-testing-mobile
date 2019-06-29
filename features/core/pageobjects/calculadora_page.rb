@@ -2,10 +2,9 @@
 
 require 'rspec/expectations'
 
-
+# CalculadoraPage
 class CalculadoraPage
   include RSpec::Matchers
-
 
   def initialize
     get_screen_mappings 'calculadora', 'core'
